@@ -1,2 +1,2 @@
-# quick_sort
-my implementation of quick sort
+# Algorithms
+My implementation of a few popular algorithms. 
