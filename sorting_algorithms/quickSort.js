@@ -47,13 +47,3 @@ function quickSort(arr, left, right) {
   return arr; 
   
 }
-
-let array = [3,9,1,5,6]
-let answer1 = quickSort(array, 0, array.length - 1)
-array = [2,8,3,1,4]
-let answer2 = quickSort(array, 0, array.length - 1)
-array = [9,1,5,4,8]
-let answer3 = quickSort(array, 0, array.length - 1)
-array = [9,8,7,6,5]
-let answer4 = quickSort(array, 0, array.length - 1)
-console.log(answer1, answer2, answer3, answer4)
