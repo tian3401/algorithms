@@ -32,15 +32,15 @@ function partition(arr, left, right) {
   return left; 
 }
 
-function quickSort(arr, left, right) {
+function quick_sort(arr, left, right) {
   let index;
   if(arr.length > 1) {
     index = partition(arr, left, right);
       if(left < index - 1) {
-        quickSort(arr,left, index - 1);
+        quick_sort(arr,left, index - 1);
       }
       if(right > index) {
-        quickSort(arr,index + 1, right);
+        quick_sort(arr,index + 1, right);
       }
   }
   
