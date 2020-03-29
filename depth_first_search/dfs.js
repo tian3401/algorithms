@@ -16,7 +16,7 @@ function dfs(problem, result, temp, index) {
   }
 
   //Build combination/permutation 
-  for(let i = 0; i < problem.length; i++) {
+  for(let i = index; i < problem.length; i++) { // if permutation i = 0
     //Edge check 
     if(index == problem.length) break 
     //Pattern: add, recurse, pop 
