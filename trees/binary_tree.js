@@ -28,12 +28,10 @@ function isBalanced(root) {
   getHeight(root);
 
   return balanced; 
-
 }
 
 //alternative template with helper fn outside of main function
 function isBalanced(root) {
-
   return getHeight(root) != -1; 
 }
 
