@@ -9,4 +9,4 @@ function dfsProblem(problem) {
       stack.push([[...temp, problem[i]],i + 1])
     }
   }
-}
+};
