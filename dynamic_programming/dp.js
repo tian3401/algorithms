@@ -11,7 +11,7 @@ function dp(n) { // int [] n
   for(let i = 2; i < n; i++) {
     table[i] = table[i - 1] + table[i - 2]; 
   }
-  //4. Return end value of dp table
+  //4. Return final state of dp table
   return res[table.length - 1]; 
 }
 
