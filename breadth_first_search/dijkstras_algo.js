@@ -70,33 +70,31 @@ class PriorityQueue {
       }
     }
     if(!exist) this.queue.push(element)
-  }
+  };
   dequeue() {
     if(this.queue.length < 1) return "cannot dequeue from empty queue"
 
     return this.queue.shift(); 
-  }
-
+  };
   getFront() {
     if(this.isEmpty()) return "empty queue"
 
     return this.queue[0];
-  }
+  };
   getBack() {
     if(this.isEmpty()) return "empty queue"
 
     return this.queue[this.queue.length - 1]; 
-  }
+  };
   isEmpty() {
     if(this.queue.length == 0) return true;
     return false; 
-  }
-
+  };
   print() {
     let string = []; 
     for(let el of this.queue) {
       string.push(JSON.stringify(el)); 
     }
     return string.join(" ")
-  }
+  };
 }; 
