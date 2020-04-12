@@ -7,11 +7,10 @@
 function dijkstra(start, graph) {
   //create a visited ds
   const visited = new Set(); 
-
-  // create distance table 
+  //create distance table 
   const distTable = {}; 
   let loc = Object.keys(graph); // pull out all locations in graph 
-  for(let source of loc) {
+  for(let source of loc) { //set table with default values 
     distTable[source] = {
       dist: Infinity, 
       from: null
@@ -46,14 +45,14 @@ function dijkstra(start, graph) {
     }
   }
   return distTable; // table of distances from vertex
-}
+};
 
 class PQElement {
   constructor(value, priority) {
     this.value    = value;
     this.priority = priority; 
   }
-}
+};
 
 //smaller num, higher priority 
 class PriorityQueue {
