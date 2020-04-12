@@ -59,7 +59,6 @@ class PriorityQueue {
   constructor() {
     this.queue = [];
   }
-
   enqueue(value, priority) {
     const element = new PQElement(value, priority); 
     let exist = false; 
@@ -72,7 +71,6 @@ class PriorityQueue {
     }
     if(!exist) this.queue.push(element)
   }
-
   dequeue() {
     if(this.queue.length < 1) return "cannot dequeue from empty queue"
 
@@ -89,7 +87,6 @@ class PriorityQueue {
 
     return this.queue[this.queue.length - 1]; 
   }
-
   isEmpty() {
     if(this.queue.length == 0) return true;
     return false; 
