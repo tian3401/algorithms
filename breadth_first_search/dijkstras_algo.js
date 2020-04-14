@@ -5,38 +5,39 @@
  * @param {string|int [][]} graph[source] 
 */
 function dijkstra(start, graph) {
-  //create a visited ds
-  const visited = new Set(); 
+  //1. Initialize all variables i.e. Visited Table Priorityqueue (VTP)
+  const visited = new Set(); //create a visited ds
   //create distance table 
-  const distTable = {}; 
+  const table = {}; 
   let loc = Object.keys(graph); // pull out all locations in graph 
   for(let source of loc) { //set table with default values 
-    distTable[source] = {
+    table[source] = {
       dist: Infinity, 
       from: null
     };
   }
-  //set ditance and from properties for start vertex 
-  distTable[start].dist = 0;
-  distTable[start].from = start; 
+  //set distance and from properties for start vertex 
+  table[start].dist = 0;
+  table[start].from = start; 
   //create queue 
   const pq = new PriorityQueue(); 
   pq.enqueue(start, 0); 
-  //loop through queue 
+
+  //2.loop through queue 
   while(!pq.isEmpty()) {
     const vertex = pq.dequeue();
     const neighbors = graph[vertex.value];
- 
-    if(!visited.has(vertex.value)) {
+    //3.Check unvisited nodes and preform work
+    if(!visited.has(vertex.value)) { //visits the node and figures out the distance to neighbors
       //add neighbors to priority queue 
       neighbors.forEach((neighbor) => {
         let dest      = neighbor[0];
         let weight    = neighbor[1]; 
-        let sumWeight = weight + distTable[vertex.value].dist; 
+        let sumWeight = weight + table[vertex.value].dist; 
         //determine total distance from start to given vertex 
-        if(sumWeight < distTable[dest].dist) {
-          distTable[dest].dist = sumWeight;
-          distTable[dest].from = vertex.value; 
+        if(sumWeight < table[dest].dist) {
+          table[dest].dist = sumWeight;
+          table[dest].from = vertex.value; 
         }
         //add neighbors to queue 
         pq.enqueue(dest, weight); 
@@ -44,7 +45,7 @@ function dijkstra(start, graph) {
       visited.add(vertex.value); //ensure not in infinite loop 
     }
   }
-  return distTable; // table of distances from vertex
+  return table; // table of distances from vertex
 };
 
 class PQElement {
