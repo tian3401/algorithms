@@ -38,9 +38,9 @@ function dijkstra(start, graph) {
         if(sumWeight < table[dest].dist) {
           table[dest].dist = sumWeight;
           table[dest].from = vertex.value; 
+          //add neighbors to queue with updated weight
+          pq.enqueue(dest, sumWeight); 
         }
-        //add neighbors to queue 
-        pq.enqueue(dest, weight); 
       })
       visited.add(vertex.value); //ensure not in infinite loop 
     }
