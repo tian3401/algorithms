@@ -72,7 +72,7 @@ function bfsGraph(graphList, start, dist) { //assumption int start
     //4. Expand the children 
     for(let i=0; i<size; i++) {
       let node = queue.shift();
-      visited.push(node);
+      visited.add(node);
       for(let neighbor of graphList[node]) {
         if(!visited.has(neighbor)) {
           queue.push(neighbor)
