@@ -32,9 +32,10 @@ function makeGraphUtil(parent, child, graphList) {
     makeGraphUtil(child, child.left, graphList);
   }
   if(root.right) {
-    makeGraphUtil(child, right.left, graphList); 
+    makeGraphUtil(child, child.right, graphList); 
   }
 }
+
 //based on solving for k distance problem 
 function bfsGraph(graphList, start, dist) { //assumption int start
   //1. Make a queue 
