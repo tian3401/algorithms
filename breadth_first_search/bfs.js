@@ -1,4 +1,6 @@
-//int[] root 
+//BFS for Trees 
+
+//Bfs traversal and print in level order 
 function levelOrderTree(root) {
   if(!root) return []; 
   //1. Make a queue 
@@ -18,9 +20,29 @@ function levelOrderTree(root) {
     }
     res.push(currentLevel); 
   }
-}
+};
 
-//create adjacency list rep of graph from tree 
+//Bfs standard simple template 
+function bfsTree(root) {
+  if(!root) return []; 
+  //1. Make a queue 
+  const queue = [root]; //use queue for deque but O(n) insertions
+  //2. Iterate over queue 
+  while(queue.length > 0) {
+    //3. Do work on curr node 
+    let node = queue.shift();
+    //process work here 
+
+    //4. Exand the children nodes 
+    if(node.left) queue.push(node.left);
+    if(node.right) queue.push(node.right); 
+  }
+  return 
+};
+
+//BFS FOR GRAPHS 
+
+//Create adjacency list rep of graph from tree 
 function makeGraphUtil(parent, child, graphList) {
   if(parent && child) {
     graphList[parent.val] = [];
@@ -34,7 +56,7 @@ function makeGraphUtil(parent, child, graphList) {
   if(root.right) {
     makeGraphUtil(child, child.right, graphList); 
   }
-}
+};
 
 //based on solving for k distance problem 
 function bfsGraph(graphList, start, dist) { //assumption int start
@@ -59,20 +81,7 @@ function bfsGraph(graphList, start, dist) { //assumption int start
     }
     return queue;//for loop on line 50 lets us reuse the queue as int[] res
   }
-}
+};
 
-function bfsTree(root) {
-  if(!root) return []; 
-  //1. Make a queue 
-  const queue = [root]; //use queue for deque but O(n) insertions
-  //2. Iterate over queue 
-  while(queue.length > 0) {
-    //3. Expand the children 
-    let node = queue.shift();
-    currentLevel.push(node.val);
-    if(node.left) queue.push(node.left);
-    if(node.right) queue.push(node.right); 
-  }
-  return 
-}
+
 
