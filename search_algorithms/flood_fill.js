@@ -1,5 +1,3 @@
-import { verify } from "crypto";
-
 // Flood fill is an alogrithm that allows us to search a connect system for a given requirement
 function main(system, start, replacement) {
   const column = [-1, -1, -1, 0, 0, 1, 1, 1],
